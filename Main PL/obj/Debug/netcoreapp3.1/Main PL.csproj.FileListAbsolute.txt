@@ -1,0 +1,11 @@
+/home/kit/RiderProjects/C_Sharp_questions/Main PL/bin/Debug/netcoreapp3.1/Main PL
+/home/kit/RiderProjects/C_Sharp_questions/Main PL/bin/Debug/netcoreapp3.1/Main PL.deps.json
+/home/kit/RiderProjects/C_Sharp_questions/Main PL/bin/Debug/netcoreapp3.1/Main PL.runtimeconfig.json
+/home/kit/RiderProjects/C_Sharp_questions/Main PL/bin/Debug/netcoreapp3.1/Main PL.runtimeconfig.dev.json
+/home/kit/RiderProjects/C_Sharp_questions/Main PL/bin/Debug/netcoreapp3.1/Main PL.dll
+/home/kit/RiderProjects/C_Sharp_questions/Main PL/bin/Debug/netcoreapp3.1/Main PL.pdb
+/home/kit/RiderProjects/C_Sharp_questions/Main PL/obj/Debug/netcoreapp3.1/Main PL.csprojAssemblyReference.cache
+/home/kit/RiderProjects/C_Sharp_questions/Main PL/obj/Debug/netcoreapp3.1/Main PL.AssemblyInfoInputs.cache
+/home/kit/RiderProjects/C_Sharp_questions/Main PL/obj/Debug/netcoreapp3.1/Main PL.AssemblyInfo.cs
+/home/kit/RiderProjects/C_Sharp_questions/Main PL/obj/Debug/netcoreapp3.1/Main PL.dll
+/home/kit/RiderProjects/C_Sharp_questions/Main PL/obj/Debug/netcoreapp3.1/Main PL.pdb
