@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
@@ -8,28 +10,19 @@ namespace Main_PL
     {
         static void Main(string[] args)
         {
-            /*Console.WriteLine("Hello World!");*/
             var stringsOne = new[] {"aaa", "bbb", "ccc"}; 
-            /*var sb = new StringBuilder(); 
-            foreach (var s in stringsOne) 
-            { 
-                sb.Append(s + " "); 
-            } 
-            var concat = sb.ToString(); 
- 
-            Console.WriteLine(concat.Substring(0,concat.Length-1)); */
-            var s = stringsOne.ToString();
-            /*foreach (var str in stringsOne)
-            {
-                s +=str +" ";
-            }*/
-            Console.WriteLine( s.ToList());
+            Console.WriteLine( GetStringFromStringQueue(new Queue<string>(stringsOne)));
             Console.ReadKey(); 
         }
 
-        private static string GetStringFromStringArray(string[] array)
+        private static string GetStringFromStringQueue(Queue<string> queue)
         {
-            return "Get me by recursion";
+            if (queue == null)
+                throw new ArgumentNullException(nameof(queue));
+  
+            if (queue.Count >=1)
+                return queue.Dequeue() + " " + GetStringFromStringQueue(queue);
+            return "";
         }
     }
 }
