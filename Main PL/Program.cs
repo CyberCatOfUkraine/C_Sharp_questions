@@ -10,19 +10,14 @@ namespace Main_PL
     {
         static void Main(string[] args)
         {
-            var stringsOne = new[] {"aaa", "bbb", "ccc"}; 
-            Console.WriteLine( GetStringFromStringQueue(new Queue<string>(stringsOne)));
+            Console.WriteLine(GetStringFromTwoValues("Lebovsky","No Money"));
             Console.ReadKey(); 
         }
 
-        private static string GetStringFromStringQueue(Queue<string> queue)
+        private static string GetStringFromTwoValues(object ObjectName, object Value)
         {
-            if (queue == null)
-                throw new ArgumentNullException(nameof(queue));
-  
-            if (queue.Count >=1)
-                return queue.Dequeue() + " " + GetStringFromStringQueue(queue);
-            return "";
+            return $"{{\"{ObjectName}\": {Value} }}";
         }
+        
     }
 }
