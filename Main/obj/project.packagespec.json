@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\Carlson\\RiderProjects\\C_Sharp_questions\\Main PL\\Main PL.csproj",
-    "projectName": "Main PL",
-    "projectPath": "C:\\Users\\Carlson\\RiderProjects\\C_Sharp_questions\\Main PL\\Main PL.csproj",
-    "outputPath": "C:\\Users\\Carlson\\RiderProjects\\C_Sharp_questions\\Main PL\\obj\\",
+    "projectUniqueName": "/home/kit/RiderProjects/C_Sharp_questions/Main/Main.csproj",
+    "projectName": "Main",
+    "projectPath": "/home/kit/RiderProjects/C_Sharp_questions/Main/Main.csproj",
+    "outputPath": "/home/kit/RiderProjects/C_Sharp_questions/Main/obj/",
     "projectStyle": "PackageReference",
     "originalTargetFrameworks": [
       "netcoreapp3.1"
@@ -35,12 +35,18 @@
       ],
       "assetTargetFallback": true,
       "warn": true,
+      "downloadDependencies": [
+        {
+          "name": "Microsoft.AspNetCore.App.Ref",
+          "version": "[3.1.3, 3.1.3]"
+        }
+      ],
       "frameworkReferences": {
         "Microsoft.NETCore.App": {
           "privateAssets": "all"
         }
       },
-      "runtimeIdentifierGraphPath": "C:\\Users\\Carlson\\.dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+      "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.106/RuntimeIdentifierGraph.json"
     }
   }
 }

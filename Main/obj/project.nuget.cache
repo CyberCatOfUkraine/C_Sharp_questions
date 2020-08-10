@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "UTU+4KLpilHQhSSsi9N+TpEAH8tsrkDZNHLJnZYwgu7OJUAhCBvWMMW1z0ARiOZ0zAY/wZwHrjr7EgaUinVrEA==",
+  "success": true,
+  "projectFilePath": "/home/kit/RiderProjects/C_Sharp_questions/Main/Main.csproj",
+  "expectedPackageFiles": [
+    "/home/kit/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.3/microsoft.aspnetcore.app.ref.3.1.3.nupkg.sha512"
+  ],
+  "logs": []
+}
