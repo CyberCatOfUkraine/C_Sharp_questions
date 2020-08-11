@@ -1,4 +1,5 @@
 using System.IO;
+using System.Linq;
 using Main;
 using NUnit.Framework;
 
@@ -28,7 +29,7 @@ namespace Tests
             const string path = "rwTest.txt";
             var fileOperations = new File_IO_Operations(path);
             fileOperations.SetToFile(testValue);
-            Assert.AreEqual(testValue,fileOperations.GetFromFile().Result);
+            Assert.AreEqual(testValue,fileOperations.GetAllLineFromFile().Result.First());
             File.Delete(path);
         }
     }

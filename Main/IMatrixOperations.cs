@@ -1,11 +1,13 @@
+using System;
 using System.Threading.Tasks;
 
 namespace Main
 {
-    public interface IMatrixOperations<T>
+    public interface IMatrixOperations
     {
-        Task SaveMatrixToFile(T[][] matix);
-        Task<T[][]> ReadMatrixFromFile();
-        Task<T[][]> GetRotatedMatrix(T[][] matrix);
+        void SaveMatrixToFile(string[] matrix);
+        Task<string[]> ReadMatrixFromFile();
+        Task<string[]> GetRotatedMatrix(string[] matrix);
+        string[] GetGeneratedRandomMatrix(int columnsValue, int rowsValue);
     }
 }

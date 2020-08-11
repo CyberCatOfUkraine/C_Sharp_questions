@@ -12,22 +12,14 @@ namespace Main
             _path = path;
         }
 
-        public async Task<string> GetFromFile()
+        public async Task<string[]> GetAllLineFromFile()
         {
-            var result="";
-            var streamReader =new StreamReader(_path);
-            while (!streamReader.EndOfStream)
-            {
-                result +=await streamReader.ReadLineAsync();
-            }
-            return result;
+            return await File.ReadAllLinesAsync(_path);;
         }
-
+        
         public async Task SetToFile(object data)
         {
-            var streamWriter = new StreamWriter(_path);
-            await streamWriter.WriteLineAsync(data.ToString());
-            streamWriter.Close();
+            await File.AppendAllTextAsync(_path,data.ToString());
         }
     }
 }
