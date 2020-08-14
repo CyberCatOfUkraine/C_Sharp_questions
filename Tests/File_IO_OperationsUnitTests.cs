@@ -7,30 +7,44 @@ namespace Tests
 {
     public class File_IO_OperationsUnitTests
     {
-        [Test]
-        public void FileCreateTest()
+        const string Path = "IOTests.txt";
+        private const string Text = "123";
+
+        public File_IO_OperationsUnitTests()
         {
-            const string path = "createTest.txt";
-            var fileOperations = new File_IO_Operations(path);
-            fileOperations.SetToFile(123);
-            if (File.Exists(path))
+            if (File.Exists(Path))
             {
-                File.Delete(path);
-                Assert.Pass();
+                File.Delete(Path);
             }
-            File.Delete(path);
-            Assert.Fail();
+        }
+        [Test]
+        public void FileWriteTest()
+        {
+            var fileOperations = new File_IO_Operations(Path);
+            fileOperations.SetToFile(Text);
+            Assert.AreEqual(File.Exists(Path),true);
+          
         }
 
         [Test]
-        public void FileReadAndWriteTest()
+        public void FileReadTest()
         {
-            const string testValue = "123";
-            const string path = "rwTest.txt";
-            var fileOperations = new File_IO_Operations(path);
-            fileOperations.SetToFile(testValue);
-            Assert.AreEqual(testValue,fileOperations.GetAllLineFromFile().Result.First());
-            File.Delete(path);
+            var fileOperations = new File_IO_Operations(Path);
+            if (File.Exists(Path))
+            {
+                File.Delete(Path);
+            }
+            fileOperations.SetToFile(Text);
+            var testItem = fileOperations.GetAllLineFromFile().First();
+            Assert.AreEqual(Text,testItem);
+        }
+
+        ~File_IO_OperationsUnitTests()
+        {
+            if (File.Exists(Path))
+            {
+                File.Delete(Path);
+            }
         }
     }
 }

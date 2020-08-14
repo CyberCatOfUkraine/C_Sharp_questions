@@ -17,18 +17,19 @@ namespace Tests
         public void ReadWriteTest()
         {
             var path = "ReadWriteTest.txt";
-            var matrixOperations = new MatrixOperations(path, ",");
-            var text = new[] {"Hello", "World!"};
+            var matrixOperations = new MatrixOperations(path, ',');
+            var text = new[] {new[] {"Hello", "World!"}};
             matrixOperations.SaveMatrixToFile(text);
-            var matrix = matrixOperations.ReadMatrixFromFile().Result;
+            var matrix = matrixOperations.ReadMatrixFromFile();
+            var testPhrase = matrix.First().First() + matrix.First().Last();
+            Assert.AreEqual("HelloWorld!", testPhrase);
             File.Delete(path);
-            Assert.AreEqual("HelloWorld!", matrix[0] + matrix[1]);
         }
 
-        [Test]
+        [Test] 
         public void GenerateMatrixTest()
         {
-            var matrixOperations = new MatrixOperations(",");
+            var matrixOperations = new MatrixOperations(',');
             var matrix = matrixOperations.GetGeneratedRandomMatrix(10, 10);
             Assert.AreEqual(matrix.Length, 10);
         }
@@ -36,20 +37,26 @@ namespace Tests
         [Test]
         public void RotateMatrixTest()
         {
-            var symbol = ",";
+            var symbol = ',';
             var matrixOperations = new MatrixOperations(symbol);
-            var matrix = matrixOperations.GetGeneratedRandomMatrix(10, 10);
+            var matrix = new[]
+            {
+                 new[] {"25","38","12"}
+                ,new[]{"1","7","76"}
+                ,new[]{"21","64","54"}
+            };
+            var matrix90 = matrixOperations.GetRotatedMatrix(matrix);
+            var matrix180 = matrixOperations.GetRotatedMatrix(matrix90);
+            var rotatedMatrix = matrixOperations.GetRotatedMatrix(matrix180);
+            var expextedMatrix= new[]
+            {
+                new[] {"12","76","54"}
+                ,new[]{"38","7","64"}
+                ,new[]{"25","1","21"}
+            };
             
-            var firstTheoreticRotatedColumnItem= matrix[0].Split(symbol).Last();
-            var lastTheoreticRotatedRowItem = matrix[0].Split(symbol).First();
             
-            var rotatedMatrix = matrixOperations.GetRotatedMatrix(matrix).Result;
-            
-            var firstRotatedColumnItem = rotatedMatrix[0].Split(symbol).First();
-            var lastRotatedColumnItem = rotatedMatrix.Last().Split(symbol).First();
-            
-            Assert.AreEqual(firstTheoreticRotatedColumnItem,firstRotatedColumnItem);
-            Assert.AreEqual(lastTheoreticRotatedRowItem,lastRotatedColumnItem);
+            Assert.AreEqual(rotatedMatrix,expextedMatrix);
         }
     }
 }
